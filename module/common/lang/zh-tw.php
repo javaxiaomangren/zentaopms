@@ -72,6 +72,7 @@ $lang->sort           = '排序';
 $lang->required       = '必填';
 $lang->noData         = '暫無';
 $lang->fullscreen     = '全屏';
+$lang->printer        = '打印';
 $lang->retrack        = '收起';
 $lang->whitelist      = '訪問白名單';
 $lang->globalSetting  = '全局設置';

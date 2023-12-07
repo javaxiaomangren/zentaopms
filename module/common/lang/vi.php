@@ -64,6 +64,7 @@ $lang->sort         = 'Sắp xếp';
 $lang->required     = 'Bắt buộc';
 $lang->noData       = 'Không có dữ liệu.';
 $lang->fullscreen   = 'Fullscreen';
+$lang->printer      = 'Print';
 $lang->retrack      = 'Retrack';
 $lang->whitelist    = 'Lista bianca';
 
