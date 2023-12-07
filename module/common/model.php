@@ -1886,6 +1886,7 @@ EOF;
         $html .= "<ul class='dropdown-menu'>";
 
         $showCount = 0;
+        $html .= "<li style='max-width: 300px;'>" . html::a(helper::createLink('project', 'execution-all', "project=$object->project"), '项目阶段', '', "title='所有阶段' class='text-ellipsis' style='padding: 2px 10px'") . '</li>';
         foreach($executionPairs as $executionID => $executionName)
         {
             $html .= "<li style='max-width: 300px;'>" . html::a(helper::createLink('execution', 'task', "executionID=$executionID"), $executionName, '', "title='{$executionName}' class='text-ellipsis' style='padding: 2px 10px'") . '</li>';
