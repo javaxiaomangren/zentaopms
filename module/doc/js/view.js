@@ -111,6 +111,73 @@ function fullScreen()
 }
 
 /**
+ * 打印
+ *
+ * @access public
+ * @return void
+ */
+function fnPrinter()
+{
+    printJS(
+        {
+            // 选择的打印区域
+            printable: 'diffContain',
+            // 可打印类型。可用的打印选项包括: pdf、html、image、json、raw-html
+            type: 'html',
+            // 设置为false 库不会处理应用于正在打印的html的样式
+            scanStyles:	false,
+            // ['*'] 处理所有样式
+            targetStyles: ['*'],
+            // 应用于正在打印的html样式
+            style: `
+            @page {
+                size: auto !important;
+                margin: 1cm !important;
+            }
+            thead th {
+                    border-top: 1px solid #000;
+                    border-right: 1px solid #000;
+                    border-left: 1px solid #000;
+                    padding: 5px;
+                }
+                tr {
+                    page-break-inside: avoid;
+                }
+                tbody td {
+                    border: 1px solid #000;
+                    padding: 5px;
+                    word-break: break-all;
+                    min-width: 35pt;
+                    span {
+                        font-size: 11pt;
+                        color: #000;
+                    }
+                    p {
+                        font-size: 11pt;
+                        color: #000;
+                    }
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+            a {
+                overflow: visible !important;
+                max-height: none !important;
+            }
+            .CodeMirror-scroll,
+            .showMoreImage {
+                display: none !important;
+            }
+            `,
+        }
+        // page-break-inside: avoid;
+        // page-break-after: avoid;
+        // page-break-before: avoid;
+    )
+}
+
+/**
  * Exit full screen.
  *
  * @access public

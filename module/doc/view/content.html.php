@@ -1,5 +1,7 @@
 <?php js::set('confirmDelete', $lang->doc->confirmDelete);?>
 <?php js::set('latestVersion', $doc->version);?>
+<?php css::import($jsRoot . 'print/print.min.css'); ?>
+<?php js::import($jsRoot . 'print/print.min.js'); ?>
 <?php $sessionString = session_name() . '=' . session_id();?>
 <div style="height:100%" id="h-full">
   <div class="main-col col-8 flex-content">
@@ -41,6 +43,9 @@
           <?php endif;?>
           </div>
           <div class="actions">
+            <!-- 打印 -->
+            <?php echo html::a("javascript:fnPrinter()", '<span class="icon-printer"></span>', '', "title='{$lang->printer}' class='btn btn-link printer-btn'");?>
+            <!-- 全屏按钮 -->
             <?php echo html::a("javascript:fullScreen()", '<span class="icon-fullscreen"></span>', '', "title='{$lang->fullscreen}' class='btn btn-link fullscreen-btn'");?>
             <?php if(common::hasPriv('doc', 'collect')):?>
             <?php $star = strpos($doc->collector, ',' . $this->app->user->account . ',') !== false ? 'star' : 'star-empty';?>
@@ -115,6 +120,7 @@
           </div>
           <?php endif;?>
         </div>
+          <!--内容展示-->
         <div id="diffContain">
         <div class="detail-content article-content table-col" <?php if('attachment' == $doc->type) echo 'style="max-height: 60px"';?>>
             <div class='info'>

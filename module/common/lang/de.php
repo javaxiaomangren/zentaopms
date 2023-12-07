@@ -82,6 +82,7 @@ $lang->sort               = 'Sortieren';
 $lang->required           = 'Pflicht';
 $lang->noData             = 'Kein Datensatz';
 $lang->fullscreen         = 'Fullscreen';
+$lang->printer            = 'Print';
 $lang->retrack            = 'Retrack';
 $lang->whitelist          = 'Weiße Liste';
 $lang->globalSetting      = 'Common';
