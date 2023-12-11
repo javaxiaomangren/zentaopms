@@ -533,7 +533,7 @@ function renderExecutionItem(item, $item)
     var labelType = end.toLocaleDateString() == today.toLocaleDateString() ? 'danger' : 'wait';
     if(!$date.length) $date = $('<span class="date label label-' + labelType + '"></span>').appendTo($info);
 
-    $date.text($.zui.formatDate(end, 'MM-dd') + ' ' + kanbancardLang.deadlineAB).attr('title', $.zui.formatDate(end, 'yyyy-MM-dd') + ' ' + kanbancardLang.deadlineAB).show();
+    $date.text($.zui.formatDate(end, 'yy-MM-dd') + ' ' + kanbancardLang.deadlineAB).attr('title', $.zui.formatDate(end, 'yyyy-MM-dd') + ' ' + kanbancardLang.deadlineAB).show();
 
     /* Display avatars of PM. */
     var $user = $info.children('.user');
