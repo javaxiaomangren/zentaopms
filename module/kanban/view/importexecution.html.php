@@ -45,10 +45,8 @@
           <th class='c-name'><?php echo $lang->execution->execName;?></th>
           <th class='c-status'><?php echo $lang->execution->execStatus;?></th>
           <th class='c-user'><?php echo $lang->execution->owner;?></th>
+          <th class='c-date'><?php echo $lang->execution->begin;?></th>
           <th class='c-date'><?php echo $lang->execution->end;?></th>
-          <th class='c-hour'><?php echo $lang->execution->totalEstimate;?></th>
-          <th class='c-hour'><?php echo $lang->execution->totalConsumed;?></th>
-          <th class='c-hour'><?php echo $lang->execution->totalLeft;?></th>
         </tr>
       </thead>
       <tbody>
@@ -78,10 +76,8 @@
           <?php endif;?>
           <td title='<?php echo zget($lang->execution->statusList, $execution->status);?>'><?php echo zget($lang->execution->statusList, $execution->status);?></td>
           <td title='<?php echo zget($users, $execution->PM);?>'><?php echo zget($users, $execution->PM);?></td>
+          <td title='<?php echo $execution->begin;?>'><?php echo $execution->begin;?></td>
           <td title='<?php echo $execution->end;?>'><?php echo $execution->end;?></td>
-          <td title='<?php echo $execution->estimate;?>'><?php echo $execution->estimate;?></td>
-          <td title='<?php echo $execution->consumed;?>'><?php echo $execution->consumed;?></td>
-          <td title='<?php echo $execution->left;?>'><?php echo $execution->left;?></td>
         </tr>
         <?php endforeach;?>
         <tr><?php echo html::hidden('targetLane', key($lanePairs));?></tr>
